@@ -1,10 +1,9 @@
-import Container from "react-bootstrap/Container";
+import MainStructure from "../templates/MainStructure";
 import ContactForm from "../components/ContactForm";
 import {useDispatch} from "react-redux";
 import _ from 'lodash';
 import {addContact} from "../store/slices/contacts";
-import {useNavigate} from "react-router";
-
+import {useNavigate} from "react-router-dom";
 
 const AddContact = () => {
 
@@ -25,18 +24,15 @@ const AddContact = () => {
         position: ''
     };
 
+    const templateProps = {
+        title: "Add New Contact"
+    };
+
     return (
         <>
-            <main>
-                <h1 className='text-center mt-5 mb-5  fw-bold'>Add new contact</h1>
-
-                <Container>
-                    <div className="box main-wrapper">
-                        <ContactForm formInitialValues={formInitialValues} formSubmitHandler={handleAddContact}/>
-                    </div>
-                </Container>
-
-            </main>
+            <MainStructure {...templateProps}>
+                <ContactForm formInitialValues={formInitialValues} formSubmitHandler={handleAddContact}/>
+            </MainStructure>
         </>
 
     );

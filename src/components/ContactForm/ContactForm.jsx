@@ -2,7 +2,8 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {Button, ButtonToolbar} from "rsuite";
 import {useNavigate} from "react-router-dom";
-import Form from "react-bootstrap/Form"
+import Form from "react-bootstrap/Form";
+import React from "react";
 
 
 const formValidationRules = Yup.object({
@@ -27,79 +28,97 @@ const formValidationRules = Yup.object({
 const ContactForm = (props) => {
 
     const navigate = useNavigate();
-    const redirectBack = () => navigate(-1);
 
     const formik = useFormik({
         initialValues: props.formInitialValues,
         validationSchema: formValidationRules,
         onSubmit: values => props.formSubmitHandler(values)
-
     });
 
-    return (
+    const {removeContact} = props;
 
-        <Form onSubmit={formik.handleSubmit} className='w-25'>
-            <Form.Group className="mb-3" controlId="todoFormTitle">
-                <Form.Label className='fw-bold'>First name</Form.Label>
-                <Form.Control
-                    name="firstName"
-                    type="text"
-                    placeholder="Enter first name"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.firstName}/>
-                {formik.touched.firstName && formik.errors.firstName ? (
-                    <div style={{color: "tomato"}}>{formik.errors.firstName}</div>
-                ) : null}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="todoFormTitle">
-                <Form.Label className='fw-bold'>Last name</Form.Label>
-                <Form.Control
-                    name="lastName"
-                    type="text"
-                    placeholder="Enter last name"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.lastName}/>
-                {formik.touched.lastName && formik.errors.lastName ? (
-                    <div style={{color: "tomato"}}>{formik.errors.lastName}</div>
-                ) : null}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="todoFormTitle">
-                <Form.Label className='fw-bold'>Phone</Form.Label>
-                <Form.Control
-                    name="phoneNumber"
-                    type="text"
-                    placeholder="Enter phone number"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.phoneNumber}/>
-                {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                    <div style={{color: "tomato"}}>{formik.errors.phoneNumber}</div>
-                ) : null}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="todoFormTitle">
-                <Form.Label className='fw-bold'>Position</Form.Label>
-                <Form.Control
-                    name="position"
-                    type="text"
-                    placeholder="Enter position"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.position}/>
-                {formik.touched.position && formik.errors.position ? (
-                    <div style={{color: "tomato"}}>{formik.errors.position}</div>
-                ) : null}
-            </Form.Group>
-            <Form.Group>
+    const redirectBack = () => navigate(-1);
+
+    return (
+        <Form onSubmit={formik.handleSubmit}>
+            <div className="inner-wrapper mb-4">
+                <Form.Group className="mb-3" controlId="todoFormTitle">
+                    <Form.Label className='form-label'>First name</Form.Label>
+                    <Form.Control
+                        className="form-input"
+                        name="firstName"
+                        type="text"
+                        placeholder="Enter first name"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.firstName}
+                    />
+                    {formik.touched.firstName && formik.errors.firstName ? (
+                        <div className="validationError">{formik.errors.firstName}</div>
+                    ) : null}
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="todoFormTitle">
+                    <Form.Label className='form-label'>Last name</Form.Label>
+                    <Form.Control
+                        className="form-input"
+                        name="lastName"
+                        type="text"
+                        placeholder="Enter last name"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.lastName}
+                    />
+                    {formik.touched.lastName && formik.errors.lastName ? (
+                        <div className="validationError">{formik.errors.lastName}</div>
+                    ) : null}
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="todoFormTitle">
+                    <Form.Label className='form-label'>Phone</Form.Label>
+                    <Form.Control
+                        className="form-input"
+                        name="phoneNumber"
+                        type="text"
+                        placeholder="Enter phone number"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.phoneNumber}
+                    />
+                    {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+                        <div className="validationError">{formik.errors.phoneNumber}</div>
+                    ) : null}
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="todoFormTitle">
+                    <Form.Label className='form-label'>Position</Form.Label>
+                    <Form.Control
+                        className="form-input"
+                        name="position"
+                        type="text"
+                        placeholder="Enter position"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.position}
+                    />
+                    {formik.touched.position && formik.errors.position ? (
+                        <div className="validationError">{formik.errors.position}</div>
+                    ) : null}
+                </Form.Group>
+            </div>
+            <Form.Group className="d-flex justify-content-between">
                 <ButtonToolbar>
-                    <Button type="submit" color="green" appearance="primary">Save</Button>
-                    <Button color="cyan" appearance="primary" onClick={redirectBack}>Cancel</Button>
-                    {props.removeContact ? props.removeContact() : null}
+                    <Button className="btn"
+                            type="submit"
+                            color="green"
+                            appearance="primary">Save
+                    </Button>
+                    <Button className="btn"
+                            color="cyan"
+                            appearance="primary"
+                            onClick={redirectBack}>Cancel
+                    </Button>
                 </ButtonToolbar>
+                {removeContact ? removeContact() : null}
             </Form.Group>
         </Form>
-
     );
 };
 

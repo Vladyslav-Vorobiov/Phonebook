@@ -1,0 +1,33 @@
+.form-input, .form-input:focus {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: transparent;
+  color: #ECFFFB;
+  border: 1px solid rgba(180, 241, 241, 0.6);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.form-input:focus {
+  outline: 1px solid #7FF4F4;
+}
+
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ECFFFB;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(35, 41, 41, 0) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #7FF4F4;
+}
+
+.validationError {
+  font-size: 14px;
+  color: tomato;
+}

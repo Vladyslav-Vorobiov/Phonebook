@@ -1,16 +1,17 @@
-import {useNavigate, useParams} from "react-router";
+import {useNavigate, useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import ContactForm from "../components/ContactForm";
 import {useDispatch} from "react-redux";
-import {editContact} from "../store/slices/contacts";
-import Button from "rsuite/Button";
-
+import {editContact, removeContact} from "../store/slices/contacts";
+import React from "react";
+import BtnWithModal from "../components/BtnWithModal";
+import MainStructure from "../templates/MainStructure";
 
 const EditContact = () => {
 
     const {id} = useParams();
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const currentContact = useSelector(state =>
         state.contacts.users.find(
@@ -18,12 +19,13 @@ const EditContact = () => {
 
     const handleEditContact = (values) => {
         dispatch(editContact({id, ...values}));
-        navigate(-1)
-    }
+        navigate(-1);
+    };
 
-    const handleRemoveContact = () => {
-        navigate("remove")
-    }
+    const handleConfirmRemove = () => {
+        dispatch(removeContact(currentContact));
+        navigate("/");
+    };
 
     const formInitialValues = {
         firstName: currentContact.firstName || '',
@@ -34,19 +36,23 @@ const EditContact = () => {
 
     const removeContactBtn = () => {
         return (
-            <Button color="red" appearance="primary" onClick={handleRemoveContact}>Remove contact </Button>
-        )
-    }
+            <BtnWithModal handleConfirmRemove={handleConfirmRemove}>Remove contact</BtnWithModal>
+        );
+    };
+
+    const templateProps = {
+        title: `Edit ${currentContact.firstName}`
+    };
 
     return (
         <>
-            <main>
-            <h2>Edit {currentContact.firstName}</h2>
-
-            <ContactForm formInitialValues={formInitialValues} formSubmitHandler={handleEditContact} removeContact={removeContactBtn}/>
-            </main>
+            <MainStructure {...templateProps}>
+                <ContactForm formInitialValues={formInitialValues}
+                             formSubmitHandler={handleEditContact}
+                             removeContact={removeContactBtn}
+                />
+            </MainStructure>
         </>
-
     );
 };
 

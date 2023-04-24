@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap')
+}
+
+::-webkit-scrollbar {
+  width: 30px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 14px 14px rgb(40, 76, 76);
+  border: 10px solid transparent;
+  border-radius: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 14px 14px #bbbbbe;
+  border: 10px solid transparent;
+  border-radius: 14px;
+
+  &:hover {
+    box-shadow: inset 0 0 14px 14px #9e9e9e;
+  }
+}
+
+html {
+  padding-top: 96px;
+  background-color: rgb(6, 45, 39);
+}
+
+.app {
+  background-color: rgb(6, 45, 39);
+  color: #ECFFFB;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.divider {
+  border-top: 1px solid #ECFFFB;
+}
+
+.inner-wrapper {
+  font-size: 0;
+  background-color: rgba(35, 41, 41, 0.4);
+  border-radius: 12px;
+  padding: 20px
+}
+
+.icon-size {
+  width: 18px;
+  height: 18px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #7FF4F4;
+  border-radius: 10px;
+
+
+  &:hover {
+    border: 1px solid #7FF4F4;
+  }
+}
+
+
+

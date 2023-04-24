@@ -22,14 +22,12 @@ export const contactsSlice = createSlice({
 
         },
         removeContact: (state, action) => {
-
-            return state.users.filter(contact => contact.id !== action.payload.id);
-
+            const filteredUsers = state.users.filter(contact => contact.id !== action.payload.id)
+            state.users = filteredUsers
         }
     }
 });
 
-// Action creators are generated for each case reducer function
 export const {addContact, editContact, removeContact} = contactsSlice.actions;
 
 export default contactsSlice.reducer;

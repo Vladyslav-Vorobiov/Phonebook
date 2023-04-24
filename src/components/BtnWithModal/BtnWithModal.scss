@@ -1,0 +1,21 @@
+.rs-modal-content {
+  background-color: #176c6c;
+  color: #7ff4f4;
+  margin-top: 150px;
+  border-radius: 14px;
+}
+
+.modal-box {
+  &__icon {
+    color: #ffb300;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+
