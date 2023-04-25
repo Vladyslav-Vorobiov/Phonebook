@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# React Phonebook
+### Easy-to-use phonebook with the following features: 
+- add a contact
+- view contact details
+- edit a contact
+- delete a contact
+- search for a contact by name, last name or phone number. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Stack:
+- React
+- React Router
+- React Bootstrap
+- Redux Toolkit
+- HTML
+- Sass
+- Formik, Yup, Lodash, Prettier, Rsuite
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+**Try this app - [PhoneBook](https://react-phonebook-six.vercel.app/ "https://react-phonebook-six.vercel.app/")**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Some screenshots:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot_1](https://user-images.githubusercontent.com/89988988/234276943-5c9003ac-2fc6-465c-9d68-ac6ae0067350.jpg) 
+![Screenshot_3](https://user-images.githubusercontent.com/89988988/234276941-e52f9111-dbc4-445f-8a23-2c173469040b.jpg)
+![Screenshot_7](https://user-images.githubusercontent.com/89988988/234286330-fe2b2fb1-7a3b-48f1-b92e-6ad44a254396.jpg)
+![Screenshot_2](https://user-images.githubusercontent.com/89988988/234276947-ec31689e-0f2a-463a-99e2-26aecf60323f.jpg)
+![Screenshot_4](https://user-images.githubusercontent.com/89988988/234286282-d7040790-d3b4-4676-8f8a-be8764b34442.jpg)
+![Screenshot_5](https://user-images.githubusercontent.com/89988988/234286307-11c6e261-d32b-49e2-aed0-f91b44938427.jpg)
+![Screenshot_6](https://user-images.githubusercontent.com/89988988/234286318-7e6f8204-ec17-4b32-b031-422924d19e82.jpg)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
