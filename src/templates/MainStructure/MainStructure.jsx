@@ -10,7 +10,7 @@ const MainStructure = (props) => {
     return (
         <Container>
             <Row className="d-flex justify-content-center">
-                <Col xs={5} className="outer-wrapper align-items-center">
+                <Col xs md lg={8} xl={6} xxl={5} className="outer-wrapper align-items-center">
                     <h4 className="page-title m-0 text-center">{title}</h4>
                     <hr className="m-0 mt-2 mb-3"/>
                     {props.children}

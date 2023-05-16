@@ -83,7 +83,7 @@ const HomePage = () => {
                     <h2>Phone Book</h2>
                 </div>
                 <Row>
-                    <Col xs={5} className="outer-wrapper main-col m-auto">
+                    <Col xs md lg={8} xl={6} xxl={5} className="outer-wrapper main-col m-auto">
                         <div className="main-col__actions d-flex justify-content-between align-items-center mb-3">
                             <div>
                                 <InputGroup
