@@ -84,8 +84,8 @@ const HomePage = () => {
                 </div>
                 <Row>
                     <Col xs md lg={8} xl={6} xxl={5} className="outer-wrapper main-col m-auto">
-                        <div className="main-col__actions d-flex justify-content-between align-items-center mb-3">
-                            <div>
+                        <div className="main-col__actions d-flex flex-column flex-md-row justify-content-between align-items-center mb-3">
+                            <div className="search-bar order-last order-md-first">
                                 <InputGroup
                                     id="search"
                                     className="search-bar"
@@ -110,8 +110,9 @@ const HomePage = () => {
                                     </InputGroup.Button>
                                 </InputGroup>
                             </div>
-                            <div className="text-end">
+                            <div className="btn-add order-first order-md-last mb-3 mb-md-0">
                                 <IconButton
+                                    className="btn-add"
                                     icon={<PlusIcon/>}
                                     size="md"
                                     color="green"
