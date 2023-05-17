@@ -9,7 +9,7 @@ import PageNotFound from "./pages/PageNotFound";
 function App() {
     return (
 
-        <main className="app">
+        <main className="app pe-3 ps-3 pe-sm-0 ps-sm-0">
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="new-contact" element={<AddContact/>}/>
